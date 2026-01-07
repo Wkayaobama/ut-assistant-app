@@ -1,0 +1,24 @@
+{
+  "assistants": [
+    {
+      "id": "finance",
+      "name": "Finance Team Assistant",
+      "description": "Financial analysis, reporting, and budgeting support for the finance team",
+      "icon": "💰",
+      "api_key": "af74821d2bdebde0a0a10642cd2a426fe637b0c7cfe9feae5b14cc33e61c7b00",
+      "model_id": "Finance team",
+      "team": "Finance",
+      "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116"
+    },
+    {
+      "id": "growth",
+      "name": "Growth Team Assistant",
+      "description": "Growth strategies, market insights, and business development support",
+      "icon": "📈",
+      "api_key": "d100b2d15d44173658505082589d00ca5977ef33abb895590871d786a5c110e3",
+      "model_id": "Growth Team",
+      "team": "Growth",
+      "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116"
+    }
+  ]
+}

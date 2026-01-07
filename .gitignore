@@ -1,0 +1,85 @@
+# UT-Assistant .gitignore
+
+# Azure Static Web Apps
+.azure/
+staticwebapp.config.json.backup
+
+# Deployment tokens and secrets
+.env
+.env.local
+.env.production
+*.secrets.json
+
+# Node.js (if using local dev server)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Python (if using local http.server)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build outputs (if any)
+dist/
+build/
+*.build/
+
+# Test coverage (if added later)
+coverage/
+.nyc_output/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Azure deployment artifacts
+.deployment
+deploy.sh
+
+# Config overrides (keep config.json tracked)
+config.local.json
+config.*.local.json
+
+# Sensitive documentation (if any)
+SECRETS.md
+CREDENTIALS.md
+
+# Reference projects (already exist)
+TFaimultiagentprsntnbuildr/
+Build-And-Deploy-Azure-AI-Agents-main/
+
+# Exclude everything except what we need
+# Only include: src/, staticwebapp.config.json, README.md, documentation
+
+# Azure CLI installer
+AzureCLI.msi
+
+# Claude settings
+.claude/settings.local.json

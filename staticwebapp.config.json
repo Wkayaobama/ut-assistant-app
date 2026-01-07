@@ -1,0 +1,37 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/styles.css",
+      "/app.js",
+      "/config.json",
+      "/*.{png,jpg,jpeg,gif,svg,ico}"
+    ]
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
+      }
+    }
+  ],
+  "globalHeaders": {
+    "content-security-policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://app.understand.tech; frame-ancestors 'none'"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".css": "text/css",
+    ".js": "application/javascript",
+    ".html": "text/html"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  }
+}
