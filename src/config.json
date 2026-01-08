@@ -1,6 +1,18 @@
 {
   "assistants": [
     {
+      "id": "general",
+      "name": "Semantic General Assistant",
+      "description": "Universal business assistant available to all employees across departments",
+      "icon": "🌐",
+      "api_key": "",
+      "model_id": "",
+      "team": "All Employees",
+      "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116",
+      "is_general": true,
+      "status": "coming_soon"
+    },
+    {
       "id": "finance",
       "name": "Finance Team Assistant",
       "description": "Financial analysis, reporting, and budgeting support for the finance team",
@@ -19,6 +31,39 @@
       "model_id": "Growth Team",
       "team": "Growth",
       "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116"
+    },
+    {
+      "id": "technical",
+      "name": "Technical Team Assistant",
+      "description": "Engineering support, architecture guidance, and technical documentation",
+      "icon": "⚙️",
+      "api_key": "",
+      "model_id": "",
+      "team": "Technical",
+      "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116",
+      "status": "coming_soon"
+    },
+    {
+      "id": "legal",
+      "name": "Legal Team Assistant",
+      "description": "Contract review, compliance guidance, and legal research support",
+      "icon": "⚖️",
+      "api_key": "",
+      "model_id": "",
+      "team": "Legal",
+      "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116",
+      "status": "coming_soon"
+    },
+    {
+      "id": "research",
+      "name": "Research Team Assistant",
+      "description": "Market research, competitive analysis, and data insights",
+      "icon": "🔬",
+      "api_key": "",
+      "model_id": "",
+      "team": "Research",
+      "tenant_id": "9398883c-8dd9-4fd9-b410-e42de5143116",
+      "status": "coming_soon"
     }
   ]
 }

@@ -17,14 +17,24 @@ function buildAssistantUrl(apiKey, modelId) {
  * Create assistant card HTML
  */
 function createAssistantCard(assistant) {
+    const isComingSoon = assistant.status === 'coming_soon';
+    const isGeneral = assistant.is_general === true;
     const assistantUrl = buildAssistantUrl(assistant.api_key, assistant.model_id);
 
-    return `
-        <div class="assistant-card" data-assistant-id="${assistant.id}">
-            <div class="assistant-icon">${assistant.icon}</div>
-            <h2>${assistant.name}</h2>
-            <p class="description">${assistant.description}</p>
-            <div class="team-badge">Team: ${assistant.team}</div>
+    // Special styling for general assistant
+    const cardClass = isGeneral ? 'assistant-card general-assistant' : 'assistant-card';
+    const statusBadge = isComingSoon ? '<div class="status-badge">Coming Soon</div>' : '';
+
+    // Button configuration
+    let buttonHtml;
+    if (isComingSoon) {
+        buttonHtml = `
+            <button class="launch-button disabled" disabled>
+                Coming Soon
+            </button>
+        `;
+    } else {
+        buttonHtml = `
             <a href="${assistantUrl}"
                target="_blank"
                rel="noopener noreferrer"
@@ -32,6 +42,17 @@ function createAssistantCard(assistant) {
                onclick="trackAssistantLaunch('${assistant.id}', '${assistant.name}')">
                 Launch Assistant →
             </a>
+        `;
+    }
+
+    return `
+        <div class="${cardClass}" data-assistant-id="${assistant.id}">
+            ${statusBadge}
+            <div class="assistant-icon">${assistant.icon}</div>
+            <h2>${assistant.name}</h2>
+            <p class="description">${assistant.description}</p>
+            <div class="team-badge">${isGeneral ? '🌍 ' : ''}${assistant.team}</div>
+            ${buttonHtml}
         </div>
     `;
 }

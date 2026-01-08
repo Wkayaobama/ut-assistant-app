@@ -271,3 +271,88 @@ body {
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
 }
+
+/* General Assistant Special Styling */
+.general-assistant {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    border: 2px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.general-assistant::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    z-index: -1;
+    border-radius: var(--border-radius);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.general-assistant:hover::before {
+    opacity: 0.1;
+}
+
+.general-assistant .assistant-icon {
+    background: linear-gradient(135deg, #0078d4, #50e6ff);
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+}
+
+.general-assistant h2 {
+    color: var(--primary-color);
+}
+
+.general-assistant .team-badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+}
+
+/* Coming Soon Badge */
+.status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #ff9500, #ff6b00);
+    color: white;
+    padding: 0.375rem 0.875rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(255, 149, 0, 0.3);
+}
+
+/* Disabled Button */
+.launch-button.disabled {
+    background: #e1dfdd;
+    color: #8a8886;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.launch-button.disabled:hover {
+    background: #e1dfdd;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Special pulse animation for general assistant */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.general-assistant.status-coming-soon .assistant-icon {
+    animation: pulse 2s ease-in-out infinite;
+}
